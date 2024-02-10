@@ -3,7 +3,7 @@ package comp249_ww;
 public class Person {
 
     // Data attributes
-    private String name;
+    String name;
     private int age;
     private Address address;
 
@@ -23,10 +23,11 @@ public class Person {
         this(name, age, new Address());
     }
 
+    /*
     public Person() {
         this("blabla", 0);
     }
-
+     */
     public Person(Person otherPerson) {
         this(otherPerson.name, otherPerson.age,
                 new Address(otherPerson.address)); // Deep copy
@@ -51,7 +52,9 @@ public class Person {
     }
 
     public void setAge(int age) {
+
         this.age = age;
+
     }
 
     public void setAdress(Address address) {
@@ -64,7 +67,32 @@ public class Person {
         return "My name is " + this.name + " and my age is " + this.age;
     }
 
+    @Override
+    public boolean equals(Object otherObject) {
+        if (otherObject == null) {
+            return false;
+        } else if (this.getClass() != otherObject.getClass()) {
+            return false;
+        } else {
+            Person otherPerson = (Person) otherObject;
+            if (this.address == otherPerson.address) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
     public int toInt() {
         return this.age;
     }
+
+    public void f() {
+        System.out.println("This is from Person");
+    }
+
+    private void g() {
+
+    }
+
 }

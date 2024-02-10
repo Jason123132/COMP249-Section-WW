@@ -32,7 +32,32 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return super.toString() + " Student " + this.getName() + " is studying " + this.programOfStudy;
+
+        return super.toString() + " Student " + this.name + " is studying " + this.programOfStudy;
     }
 
+    public boolean equals(Object otherObject) {
+        // Check if the parameter is null (else, return false)
+        if (otherObject == null) {
+            return false;
+        }
+
+        // Check if parameter is of this class type (else, return false)
+        if (this.getClass() != otherObject.getClass()) {
+            return false;
+        }
+
+        // Do the comparison (based on GPA)
+        Student otherStudent = (Student) otherObject;
+        if (this.programOfStudy.equals(otherStudent.programOfStudy) && this.gpa == otherStudent.gpa) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public void f() {
+        System.out.println("This is from STudent.");
+    }
 }
