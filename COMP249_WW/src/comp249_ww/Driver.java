@@ -1,17 +1,44 @@
 package comp249_ww;
 
+import java.util.Scanner;
+
 public class Driver {
 
     public static void main(String[] args) {
 
         Address myAddress = new Address(123, "Rene-Levesque", "Montreal");
 
-        Person st1 = new Student("John", 20, myAddress, "Computer Science", 4.1);
+        System.out.print("Please input a number: ");
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+
+        Person st1;
+
+        if (number > 5) {
+            st1 = new Student("John", 20, myAddress, "Computer Science", 4.1);
+        } else {
+            st1 = new Person("sdfsd", 7);
+        }
+
         Student st2 = new Student("John", 20, myAddress, "Computer Science", 4.1);
 
-        //Student st3 = st1;
-        st1.f();
+        if (st1.equals(st2)) { // Dynamic binding
 
+        }
+
+        Person st6 = new Person(st1);
+
+        Person st7 = st1.clone();
+
+//        Person st4 = new Student("John", 20, myAddress, "Computer Science", 4.1);
+//        Person st5 = st4;
+//        Student st6 = (Student) st5;
+//        System.out.println(st1 instanceof Student);
+//        System.out.println(st1 instanceof Person);
+//        System.out.println(st1 instanceof Object);
+//        st1.g(); // Dynamic binding
+        //Student st3 = st1;
+//        st1.f();
 //        if (st1.equals(st2)) {
 //            System.out.println("Equal");
 //        } else {

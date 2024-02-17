@@ -3,9 +3,9 @@ package comp249_ww;
 public class Person {
 
     // Data attributes
-    String name;
-    private int age;
-    private Address address;
+    protected String name;
+    protected int age;
+    protected Address address;
 
     // Constructors
     public Person(String name, int age, Address address) {
@@ -83,6 +83,11 @@ public class Person {
         }
     }
 
+    @Override
+    protected Person clone() {
+        return new Person(this);
+    }
+
     public int toInt() {
         return this.age;
     }
@@ -91,8 +96,7 @@ public class Person {
         System.out.println("This is from Person");
     }
 
-    private void g() {
+    public void g() {
 
     }
-
 }
