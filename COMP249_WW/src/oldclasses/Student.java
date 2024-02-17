@@ -1,4 +1,4 @@
-package comp249_ww;
+package oldclasses;
 
 public class Student extends Person {
 
