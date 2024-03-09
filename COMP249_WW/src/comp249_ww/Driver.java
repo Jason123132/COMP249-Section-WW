@@ -1,52 +1,48 @@
 package comp249_ww;
 
-import java.util.InputMismatchException;
+import java.io.PrintWriter;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 import java.util.Scanner;
 
 public class Driver {
 
     public static void main(String[] args) {
 
-        int x = 3;
-
-        int z = 0;
-
+        // Open the file
+        Scanner myScanner = null;
         try {
-            int y = getNumber();
-            int b = getNumber();
-            int c = getNumber();
-            int d = getNumber();
-            z = x / (x - y); // Division by Zero
-            System.out.println("Another line of code");
-            System.out.println("Another line of code");
-            System.out.println("Another line of code");
-            System.out.println("Another line of code");
-            System.out.println("Another line of code");
-            System.out.println("Another line of code");
-            System.out.println("Another line of code");
-            System.out.println("Another line of code");
-
-        } catch (ArithmeticException ae) {
-            System.out.println("Division by zero.");
-        } catch (InputMismatchException ime) {
-            System.out.println("The input must be an int.");
-        } catch (Exception ex) {
-            System.out.println("There was a problem with your program." + ex.getMessage());
+            myScanner = new Scanner(new FileInputStream("file.txt"));
+        } catch (FileNotFoundException fnfe) {
+            System.out.println("Cannot open the file for input.");
             System.exit(0);
-        } finally {
-            System.out.println("This is finally.");
+        }
+        // Read from the file
+        while (myScanner.hasNextLine()) {
+            String s = myScanner.nextLine();
+            System.out.println(s);
         }
 
-        System.out.println("The result is " + z);
+        // Close the file
+        myScanner.close();
+        /*
+        // Open the file
+        PrintWriter myWriter = null;
+        try {
+            myWriter = new PrintWriter(new FileOutputStream("file.txt", true));
+        } catch (FileNotFoundException fnfe) {
+            System.out.println("Cannot open the file.");
+            System.exit(0);
+        }
+        // Write to the file
+        myWriter.println("Hello COMP249, Friday Night!");
 
-    }
+        // Close the file
+        myWriter.close();
 
-    public static int getNumber() throws InputMismatchException {
-        System.out.print("Please input a number: ");
-        Scanner sc = new Scanner(System.in);
-
-        int y = sc.nextInt(); // InputMismatch
-        return y;
+         */
     }
 
 }
