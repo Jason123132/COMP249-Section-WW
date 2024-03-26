@@ -1,4 +1,4 @@
-package comp249_ww;
+package oldclasses;
 
 public interface Interface1 {
 

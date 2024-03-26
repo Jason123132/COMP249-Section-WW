@@ -1,4 +1,6 @@
-package comp249_ww;
+package oldclasses;
+
+import oldclasses.Interface1;
 
 public class AnotherSomeClass implements Interface1 {
 

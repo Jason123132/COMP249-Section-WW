@@ -4,21 +4,19 @@ public class Driver {
 
     public static void main(String[] args) {
 
-        Interface1 obj = new SomeClass();
-        Interface1 obj2 = new AnotherSomeClass();
+        OurLinkedList list1 = new OurLinkedList();
 
-        Interface1[] objects = new Interface1[2];
-
-        objects[0] = obj;
-        objects[1] = obj2;
-
-        for (Interface1 o : objects) {
-            o.display();
-        }
-
+        list1.addAtHead(5);
+        list1.addAtEnd(25);
+        list1.addAfter(25, 80);
+        //int value = list1.removeHead();
+        //int value = list1.removeEnd();
+        int value = list1.removeAfter(80);
+        //System.out.println(value);
+        //System.out.println(value);
+        //list1.addAtEnd(30);
+        //list1.addAtHead(10);
+        list1.display();
     }
 
-    public static void abc(Interface1 i) {
-
-    }
 }
