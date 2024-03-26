@@ -76,6 +76,7 @@ public class OurLinkedList {
         }
     }
 
+    // Remove a specific value
     // Remove after
     public int removeAfter(int value) {
         if (head == null) {
