@@ -8,6 +8,7 @@ public class OurLinkedList {
 
     public OurLinkedList() {
         head = null;
+        size = 0;
     }
 
     // Add at head
@@ -77,11 +78,33 @@ public class OurLinkedList {
     }
 
     // Remove a specific value
-    // Remove after
-    public int removeAfter(int value) {
+    public int removeValue(int valueToRemove) {
         if (head == null) {
             return -1;
-        } else if (size == 1) {
+        } else if (head.value == valueToRemove) {
+            Node temp = head;
+            head = head.next;
+            size--;
+            return temp.value;
+        } else {
+            Node position = head;
+            while (position.next != null && position.next.value != valueToRemove) {
+                position = position.next;
+            }
+            if (position.next != null) {
+                Node temp = position.next;
+                position.next = position.next.next;
+                size--;
+                return temp.value;
+            } else {
+                return -1;
+            }
+        }
+    }
+
+    // Remove after
+    public int removeAfter(int value) {
+        if (size < 2) {
             return -1;
         } else {
             Node position = head;
