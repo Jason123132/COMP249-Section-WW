@@ -3,7 +3,20 @@ package comp249_ww;
 public class Driver {
 
     public static void main(String[] args) {
+        OurCLinkedList<String> sList = new OurCLinkedList<>();
 
+        OurCLinkedList<Integer> iList = new OurCLinkedList<>();
+
+        OurCLinkedList<A> aList = new OurCLinkedList<>();
+
+        sList.addAtHead("Hello");
+
+        iList.addAtHead(5);
+
+        aList.addAtHead(new A());
+        sList.display();
+        iList.display();
+        aList.display();
         /* Driver for Circular Linked List
         OurCLinkedList list = new OurCLinkedList();
 
