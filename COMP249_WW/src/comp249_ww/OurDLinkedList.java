@@ -56,6 +56,8 @@ public class OurDLinkedList {
 
                     position.after.before = n;
                     position.after = n;
+
+                    size++;
                 }
             }
         }
@@ -82,7 +84,49 @@ public class OurDLinkedList {
     }
 
     // Remove tail
-    // Remove a value
+    public int removeTail() {
+        if (head == null) {
+            return -1;
+        } else if (size == 1) {
+            return removeHead();
+        } else {
+            Node temp = tail;
+            tail = tail.before;
+            tail.after = null;
+            size--;
+            return temp.value;
+        }
+    }
+
+// Remove a value
+    public int removeValue(int value) {
+        if (head == null) {
+            return -1;
+        } else {
+            Node position = head;
+            while (position != null && position.value != value) {
+                position = position.after;
+            }
+            if (position != null) {
+                if (position == head) {
+                    return removeHead();
+                } else if (position == tail) {
+                    return removeTail();
+                } else {
+                    //Node temp = position;
+                    Node beforePosition = position.before;
+                    Node afterPosition = position.after;
+
+                    beforePosition.after = position.after;
+                    afterPosition.before = position.before;
+                    size--;
+                    return position.value;
+                }
+            }
+            return -1;
+        }
+    }
+
     // get size
     public int getSize() {
         return size;
@@ -94,6 +138,8 @@ public class OurDLinkedList {
             System.out.println("The list is empty");
         } else {
             System.out.println("The list has " + size + " element(s):");
+            System.out.println("From Head to Tail: ");
+
             Node position = head;
             while (position != null) {
                 System.out.println(position.value);
@@ -107,10 +153,13 @@ public class OurDLinkedList {
             System.out.println("The list is empty");
         } else {
             System.out.println("The list has " + size + " element(s):");
+            System.out.println("From Tail to Head: ");
+
             Node position = tail;
             while (position != null) {
                 System.out.println(position.value);
                 position = position.before;
+
             }
         }
     }
@@ -118,6 +167,7 @@ public class OurDLinkedList {
     private class Node {
 
         private int value;
+
         private Node before;
         private Node after;
 

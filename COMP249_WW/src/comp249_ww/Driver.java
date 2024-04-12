@@ -4,22 +4,40 @@ public class Driver {
 
     public static void main(String[] args) {
 
+        /* Driver for Circular Linked List
+        OurCLinkedList list = new OurCLinkedList();
+
+        list.addAtHead(10);
+        list.addAtHead(5);
+        //list.addAtHead(2);
+        list.addAtTail(20);
+        //list.addAtTail(30);
+        //list.addAtTail(40);
+        //System.out.println(list.removeHead());
+        System.out.println(list.removeTail());
+        list.display();
+         */
+ /*
         OurDLinkedList list = new OurDLinkedList();
 
         list.addAtHead(10);
         list.addAtTail(20);
         list.addAfter(10, 15);
+        list.addAfter(20, 15);
+
         //list.addAtTail(7);
         //list.addAtTail(14);
         //list.addAtHead(10);
         //list.addAtHead(5);
         //list.addAtHead(2);
-        System.out.println(list.removeHead());
+        //System.out.println(list.removeHead());
+        //System.out.println(list.removeTail());
+        System.out.println(list.removeValue(15));
         list.displayForward();
         list.displayBackward();
 
-
-        /* Driver for Simple Linked Lists
+         */
+ /* Driver for Simple Linked Lists
         OurLinkedList list1 = new OurLinkedList();
 
         list1.addAtHead(15);
@@ -37,4 +55,9 @@ public class Driver {
          */
     }
 
+}
+
+class A {
+
+    //equals
 }
