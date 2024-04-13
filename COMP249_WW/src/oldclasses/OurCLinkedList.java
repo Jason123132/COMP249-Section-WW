@@ -1,6 +1,6 @@
-package comp249_ww;
+package oldclasses;
 
-public class OurCLinkedList<T extends Comparable> {
+public class OurCLinkedList<T> {
 
     private Node head;
     private Node tail;
